@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title></title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <link rel="stylesheet" href="assets/new/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/new/main.css">
+</head>
+
+<body onload="vouchermode();">
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script src="/md5.js"></script>
+    <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+
+    </script>
+    $(endif)
+
+    <div id="hotspot_name">
+        <img src="assets/img/logo.svg" width="50%"/>
+    </div>
+
+    <div id="wrapper">
+        <div id="content">
+
+            <header class="main_haeder bg-transparent multi_item">
+                <div class="title_page" id="runningtext">
+
+                </div>
+            </header>
+
+            <section class="emCategories__learning emPage__cgLearning">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500">
+                    <div class="carousel-inner">
+                        <section class="margin-b-20 emPage__CateJobs">
+                            <div class="emCategorie_itemJobs _list bg-blue" id="slideritems">
+                                <div class="carousel-item">
+                                    <div class="text-white">
+                                         Sekarang bisa membeli & perpanjang voucher secara online
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="text-white">
+                                        Voucher juga bisa didapatkan dengan chat ke bot wa
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center btnmode mb-3">
+                    <button type="button" class="btn btn-dark btn-sm mr-1" id="voucher" onclick="vouchermode()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8573 20.4168C19.7323 20.4168 21.2503 18.8978 21.2503 17.0238V14.3238C20.0103 14.3238 19.0103 13.3238 19.0103 12.0848C19.0103 10.8448 20.0103 9.84576 21.2503 9.84576L21.2483 7.14276C21.2483 5.26876 19.7303 3.74976 17.8563 3.74976H6.14431C4.27031 3.74976 2.75131 5.26876 2.75131 7.14276L2.75031 9.93276C3.98931 9.93276 4.98931 10.8448 4.98931 12.0848C4.98931 13.3238 3.98931 14.3238 2.75031 14.3238V17.0238C2.75031 18.8978 4.26831 20.4168 6.14231 20.4168H17.8573Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M11.9998 13.8543L13.7398 14.7693C13.9028 14.8543 14.0938 14.7163 14.0628 14.5353L13.7298 12.5963L15.1388 11.2253C15.2708 11.0963 15.1978 10.8733 15.0158 10.8463L13.0698 10.5633L12.1988 8.79929C12.1178 8.63429 11.8828 8.63429 11.8008 8.79929L10.9298 10.5633L8.98481 10.8463C8.80281 10.8733 8.72981 11.0963 8.86181 11.2253L10.2698 12.5963L9.93681 14.5353C9.90581 14.7163 10.0968 14.8543 10.2598 14.7693L11.9998 13.8543Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Voucher
+                    </button>
+                    <button type="button" class="btn btn-dark btn-sm mr-1" id="member" onclick="membermode()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.02 19.5H7.5C6.88 19.5 6.33 19.48 5.84 19.41C3.21 19.12 2.5 17.88 2.5 14.5V9.5C2.5 6.12 3.21 4.88 5.84 4.59C6.33 4.52 6.88 4.5 7.5 4.5H10.96" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15.02 4.5H16.5C17.12 4.5 17.67 4.52 18.16 4.59C20.79 4.88 21.5 6.12 21.5 9.5V14.5C21.5 17.88 20.79 19.12 18.16 19.41C17.67 19.48 17.12 19.5 16.5 19.5H15.02" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 2V22" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11.0945 12H11.1035" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.09448 12H7.10346" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Member
+                    </button>
+
+                    <button type="button" class="btn btn-dark btn-sm" id="scanqr" onclick="location.href = '//laksa19.github.io/myqr/';">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 9.75C1.59 9.75 1.25 9.41 1.25 9V6.5C1.25 3.6 3.61 1.25 6.5 1.25H9C9.41 1.25 9.75 1.59 9.75 2C9.75 2.41 9.41 2.75 9 2.75H6.5C4.43 2.75 2.75 4.43 2.75 6.5V9C2.75 9.41 2.41 9.75 2 9.75Z" fill="#fff"/>
+                            <path d="M22 9.75C21.59 9.75 21.25 9.41 21.25 9V6.5C21.25 4.43 19.57 2.75 17.5 2.75H15C14.59 2.75 14.25 2.41 14.25 2C14.25 1.59 14.59 1.25 15 1.25H17.5C20.39 1.25 22.75 3.6 22.75 6.5V9C22.75 9.41 22.41 9.75 22 9.75Z" fill="#fff"/>
+                            <path d="M17.5 22.75H16C15.59 22.75 15.25 22.41 15.25 22C15.25 21.59 15.59 21.25 16 21.25H17.5C19.57 21.25 21.25 19.57 21.25 17.5V16C21.25 15.59 21.59 15.25 22 15.25C22.41 15.25 22.75 15.59 22.75 16V17.5C22.75 20.4 20.39 22.75 17.5 22.75Z" fill="#fff"/>
+                            <path d="M9 22.75H6.5C3.61 22.75 1.25 20.4 1.25 17.5V15C1.25 14.59 1.59 14.25 2 14.25C2.41 14.25 2.75 14.59 2.75 15V17.5C2.75 19.57 4.43 21.25 6.5 21.25H9C9.41 21.25 9.75 21.59 9.75 22C9.75 22.41 9.41 22.75 9 22.75Z" fill="#fff"/>
+                            <path d="M9 11.25H7C5.59 11.25 4.75 10.41 4.75 9V7C4.75 5.59 5.59 4.75 7 4.75H9C10.41 4.75 11.25 5.59 11.25 7V9C11.25 10.41 10.41 11.25 9 11.25ZM7 6.25C6.41 6.25 6.25 6.41 6.25 7V9C6.25 9.59 6.41 9.75 7 9.75H9C9.59 9.75 9.75 9.59 9.75 9V7C9.75 6.41 9.59 6.25 9 6.25H7Z" fill="#fff"/>
+                            <path d="M17 11.25H15C13.59 11.25 12.75 10.41 12.75 9V7C12.75 5.59 13.59 4.75 15 4.75H17C18.41 4.75 19.25 5.59 19.25 7V9C19.25 10.41 18.41 11.25 17 11.25ZM15 6.25C14.41 6.25 14.25 6.41 14.25 7V9C14.25 9.59 14.41 9.75 15 9.75H17C17.59 9.75 17.75 9.59 17.75 9V7C17.75 6.41 17.59 6.25 17 6.25H15Z" fill="#fff"/>
+                            <path d="M9 19.25H7C5.59 19.25 4.75 18.41 4.75 17V15C4.75 13.59 5.59 12.75 7 12.75H9C10.41 12.75 11.25 13.59 11.25 15V17C11.25 18.41 10.41 19.25 9 19.25ZM7 14.25C6.41 14.25 6.25 14.41 6.25 15V17C6.25 17.59 6.41 17.75 7 17.75H9C9.59 17.75 9.75 17.59 9.75 17V15C9.75 14.41 9.59 14.25 9 14.25H7Z" fill="#fff"/>
+                            <path d="M17 19.25H15C13.59 19.25 12.75 18.41 12.75 17V15C12.75 13.59 13.59 12.75 15 12.75H17C18.41 12.75 19.25 13.59 19.25 15V17C19.25 18.41 18.41 19.25 17 19.25ZM15 14.25C14.41 14.25 14.25 14.41 14.25 15V17C14.25 17.59 14.41 17.75 15 17.75H17C17.59 17.75 17.75 17.59 17.75 17V15C17.75 14.41 17.59 14.25 17 14.25H15Z" fill="#fff"/>
+                        </svg>
+                        Scan
+                    </button>
+
+                </div>
+
+                $(if error)
+                <section class="margin-b-20 emPage__CateJobs">
+                    <div class="emCategorie_itemJobs _list bg-danger text-white" id="err">
+                    </div>
+                </section>
+                $(endif)
+
+                <form id="formlogin" class="mb-2" style="border-bottom: 1px dashed rgba(0, 0, 0, 0.2);padding-bottom: 10px;" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <div class="form-group inputDefault-animated">
+                        <div class="group_anime cinput">
+                            <input type="text" id="username" class="form-control" name="username" value="$(username)" required>
+                            <label id="userlabel" for="username">Kode Voucher</label>
+                        </div>
+                    </div>
+                    <div id="divpass" class="form-group inputDefault-animated">
+                        <div class="group_anime cinput" id="passinput" style="margin-top: -5px !important;">
+                            <input type="password" id="password" class="form-control" name="password" required>
+                            <label id="passlabel" for="password" >Password</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-dark w-100" id="submitlogin">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.2405 22.27H15.1105C10.6705 22.27 8.5305 20.52 8.1605 16.6C8.1205 16.19 8.4205 15.82 8.8405 15.78C9.2505 15.74 9.6205 16.05 9.6605 16.46C9.9505 19.6 11.4305 20.77 15.1205 20.77H15.2505C19.3205 20.77 20.7605 19.33 20.7605 15.26V8.73998C20.7605 4.66998 19.3205 3.22998 15.2505 3.22998H15.1205C11.4105 3.22998 9.9305 4.41998 9.6605 7.61998C9.6105 8.02998 9.2705 8.33998 8.8405 8.29998C8.4205 8.26998 8.1205 7.89998 8.1505 7.48998C8.4905 3.50998 10.6405 1.72998 15.1105 1.72998H15.2405C20.1505 1.72998 22.2505 3.82998 22.2505 8.73998V15.26C22.2505 20.17 20.1505 22.27 15.2405 22.27Z" fill="#fff"/>
+                            <path d="M14.88 12.75H2C1.59 12.75 1.25 12.41 1.25 12C1.25 11.59 1.59 11.25 2 11.25H14.88C15.29 11.25 15.63 11.59 15.63 12C15.63 12.41 15.3 12.75 14.88 12.75Z" fill="#fff"/>
+                            <path d="M12.6498 16.1001C12.4598 16.1001 12.2698 16.0301 12.1198 15.8801C11.8298 15.5901 11.8298 15.1101 12.1198 14.8201L14.9398 12.0001L12.1198 9.18009C11.8298 8.89009 11.8298 8.41009 12.1198 8.12009C12.4098 7.83009 12.8898 7.83009 13.1798 8.12009L16.5298 11.4701C16.8198 11.7601 16.8198 12.2401 16.5298 12.5301L13.1798 15.8801C13.0298 16.0301 12.8398 16.1001 12.6498 16.1001Z" fill="#fff"/>
+                        </svg>
+                        Connect
+                        </button>
+                    </div>
+                    $(if trial == 'yes')
+                    <div class="text-center">
+                        Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.
+                    </div>
+                    $(endif)
+                </form>
+
+                <h6 class="text-center mb-3"  style="border-bottom: 1px dashed rgba(0, 0, 0, 0.2);padding-bottom: 10px;">MENU</h6>
+                <!-- <div class="d-flex justify-content-between mb-2">
+                    <a href="#/" onClick="openbeli();" class="emCategorie_itemJobs _list bg-blue w-100 mr-2" data-toggle="modal"
+                    data-target="#modalbeli">
+                        <div class="txt">
+                            <h2>Beli</h2>
+                            <p>Beli Voucher</p>
+                        </div>
+                    </a>
+
+                
+
+                    <a href="#/" onClick="openperpanjang();" class="emCategorie_itemJobs _list bg-blue w-100" data-toggle="modal"
+                    data-target="#modalperpanjang">
+                        <div class="txt">
+                            <h2>Perpanjang</h2>
+                            <p>Perpanjang Voucher</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <a href="#/" onClick="opencek();" class="emCategorie_itemJobs _list bg-blue w-50 mr-2" data-toggle="modal"
+                    data-target="#modalcek">
+                        <div class="txt">
+                            <h2>Cek Voucher</h2>
+                            <p>Cek Status Voucher</p>
+                        </div>
+                    </a> -->
+              <div class="d-flex justify-content-center">
+                    <a href="https://t.me/jarvis_mikrotik_bot" class="emCategorie_itemJobs _list bg-blue w-50 mr-2" >
+                        <div class="txt">
+                            <h2>Telegram</h2>
+                            <p>Via Bot</p>
+                        </div>
+                    </a>
+         
+
+                    <a href="https://wa.me/123456?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda" class="emCategorie_itemJobs _list bg-green w-50">
+                        <div class="txt">
+                            <h2>Whatsapp</h2>
+                            <p>Soon</p>
+                        </div>
+                    </a>
+
+                    
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+<!-- Modal Beli -->
+<div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="modalbeli" tabindex="-1"
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content" id="kontenmodal">
+        <div class="modal-header border-0 padding-l-20 padding-r-20 justify-content-center">
+            <div class="itemProduct_sm">
+                <h1 class="size-18 weight-600 color-secondary m-0">Beli Voucher</h1>
+            </div>
+            <div class="absolute right-0 padding-r-20">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="tio-clear"></i>
+                </button>
+            </div>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+            <iframe class="responsive-iframe" id="iframebeli" scrolling="no" frameborder="0" src=""></iframe>
+        </div>
+        <div class="mb-2 pt-2 text-center" style="border-top: 1px dashed rgba(0, 0, 0, 0.2);margin: 0 auto;">
+            <p>
+                " akun akan aktif otomatis ketika transaksi selesai "
+            </p>
+            <a href="#" style="margin-top: -5px;" class="btn w-25 bg-blue color-white" data-dismiss="modal">
+                Tutup
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal Perpanjang -->
+<div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="modalperpanjang" tabindex="-1"
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content" id="kontenmodal">
+        <div class="modal-header border-0 padding-l-20 padding-r-20 justify-content-center">
+            <div class="itemProduct_sm">
+                <h1 class="size-18 weight-600 color-secondary m-0">Perpanjang Voucher</h1>
+            </div>
+            <div class="absolute right-0 padding-r-20">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="tio-clear"></i>
+                </button>
+            </div>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+            <iframe class="responsive-iframe" id="iframeperpanjang" scrolling="no" frameborder="0" src=""></iframe>
+        </div>
+        <div class="mb-2 pt-2 text-center" style="border-top: 1px dashed rgba(0, 0, 0, 0.2);margin: 0 auto;">
+            <p>
+                " akun akan diperpanjang otomatis ketika transaksi selesai "
+            </p>
+            <a href="#" style="margin-top: -5px;" class="btn w-25 bg-blue color-white" data-dismiss="modal">
+                Tutup
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal Cek -->
+<div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="modalcek" tabindex="-1"
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content" id="kontenmodal">
+        <div class="modal-header border-0 padding-l-20 padding-r-20 justify-content-center">
+            <div class="itemProduct_sm">
+                <h1 class="size-18 weight-600 color-secondary m-0">Cek Voucher</h1>
+            </div>
+            <div class="absolute right-0 padding-r-20">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="tio-clear"></i>
+                </button>
+            </div>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+            <iframe class="responsive-iframe" id="iframecek" scrolling="no" frameborder="0" src=""></iframe>
+        </div>
+        <div class="mb-3 pt-2 text-center" style="margin: 0 auto;">
+            <a href="#" style="margin-top: -5px;" class="btn w-100 bg-blue color-white" data-dismiss="modal">
+                Tutup
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<script src="config.js"></script>
+<script src="assets/js/jquery-3.6.0.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
+var err = "$(error)";
+if (err.split(" ")[1] == "kadaluarsa"){
+    location.href = 'https://pos.lagilupa.dpdns.org/isolir2/' + config.rotuerid + '/' + err.split(" ")[0];
+}else{
+    document.getElementById('err').innerHTML = err;
+}
+
+$( document ).ready(function() {
+
+    var hotspotname = config.hotspotname;
+    document.title = 'Login > ' + hotspotname;
+
+    document.getElementById('runningtext').innerHTML = config.runningtext;
+
+    var passlabel = document.getElementById('passlabel');
+    var userlabel = document.getElementById('userlabel');
+    var username = document.login.username;
+    var password = document.login.password;
+    var divpass = document.getElementById('divpass');
+
+    username.onkeyup = setpass;
+    password.type = "hidden";
+    passlabel.style.display = "none";
+    divpass.classList.remove("form-group");
+
+
+});
+function setpass(){
+    password.value = username.value;
+}
+
+function vouchermode(){
+    username.onkeyup = setpass;
+    username.placeholder = "Kode Voucher";
+    password.type = "hidden";
+    passlabel.style.display = "none";
+    password.value = username.value;
+    divpass.classList.remove("form-group");
+    userlabel.innerHTML = "Kode Voucher";
+}
+
+function membermode(){
+    divpass.classList.add("form-group");
+    username.onkeyup = "";
+    password.type= "password";
+    password.value = "";
+    username.placeholder = "Username";
+    passlabel.style.display = "inline-block";
+    userlabel.innerHTML = "Username";
+}
+function openbeli() {
+   document.getElementById('iframebeli').src='https://pos.lagilupa.dpdns.org/tbeli/' + config.rotuerid;
+}
+
+function openperpanjang() {
+   document.getElementById('iframeperpanjang').src='https://pos.lagilupa.dpdns.org/tperpanjang/' + config.rotuerid;
+}
+
+function opencek() {
+   document.getElementById('iframecek').src='https://pos.lagilupa.dpdns.org/tchk/' + config.rotuerid;
+}
+</script>
+<script>
+    $('#myCarousel').find('.carousel-item').first().addClass('active');
+    $('#myCarouse2').find('.carousel-item').first().addClass('active');
+    $('#myCarousel').carousel({
+    pause: "false"
+    });
+    $('#myCarouse2').carousel({
+    pause: "false"
+    });
+</script>
+</body>
+</html>
